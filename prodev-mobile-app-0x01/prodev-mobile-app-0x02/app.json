@@ -1,12 +1,19 @@
 {
   "expo": {
-    "name": "prodev-mobile-app-0x01",
-    "slug": "prodev-mobile-app-0x01",
+    "name": "prodev-mobile-app-0x02",
+    "slug": "prodev-mobile-app-0x02",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "prodevmobileapp0x01",
-    "userInterfaceStyle": "auto
+    "scheme": "prodevmobileapp0x02",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"

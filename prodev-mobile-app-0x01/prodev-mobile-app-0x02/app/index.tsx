@@ -24,8 +24,12 @@ export default function Index() {
             </View>
 
             <View style={styles.textGroup}>
-              <Text style={styles.textLarge}>Find your favorite place here</Text>
-              <Text style={styles.textSmall}>The best prices for over 2 </Text>
+              <Text style={styles.textLarge}>
+                Find your favorite place here
+              </Text>
+              <Text style={styles.textSmall}>
+                The best prices for over 2
+              </Text>
               <Text style={styles.textSmall}>
                 million properties worldwide
               </Text>
@@ -45,7 +49,9 @@ export default function Index() {
               </View>
 
               <View style={{ alignItems: "center", paddingVertical: 20 }}>
-                <Text style={{ color: "white" }}>Continue to home</Text>
+                <Text style={{ color: "white" }}>
+                  Continue to home
+                </Text>
               </View>
             </View>
           </View>
@@ -113,5 +119,3 @@ const styles = StyleSheet.create({
     gap: 20,
     paddingHorizontal: 20,
   },
-});
-
