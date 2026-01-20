@@ -1,48 +1,62 @@
+import React from "react";
 import {
   View,
   Text,
+  StyleSheet,
   Image,
   ImageBackground,
   TouchableOpacity,
   Dimensions,
-  StyleSheet,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 const { width, height } = Dimensions.get("window");
 
 export default function Index() {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ImageBackground
-        source={require("../assets/images/background-image.png")}
-        style={styles.background}
-        resizeMode="cover"
-      >
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/Logo.png")}
-            style={styles.logo}
-          />
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeArea}>
+        <ImageBackground
+          source={require("../assets/images/background-image.png")}
+          style={styles.background}
+        >
+          <View style={styles.container}>
+            {/* Company Logo */}
+            <Image
+              source={require("../assets/images/logo.png")}
+              style={styles.logo}
+            />
 
-          <Text style={styles.textLarge}>
-            Find your favorite place here
-          </Text>
+            {/* Text Elements */}
+            <Text style={styles.textLarge}>
+              Find your favorite place here
+            </Text>
+            <Text style={styles.textSmall}>
+              The best prices for over 2
+            </Text>
+            <Text style={styles.textSmall}>
+              million properties worldwide
+            </Text>
 
-          <Text style={styles.textSmall}>
-            The best prices for over 2
-          </Text>
+            {/* Button Group */}
+            <View style={styles.buttonGroup}>
+              <TouchableOpacity style={styles.primaryButton}>
+                <Text style={styles.primaryButtonText}>Join Now</Text>
+              </TouchableOpacity>
 
-          <Text style={styles.textSmall}>
-            million properties worldwide
-          </Text>
+              <TouchableOpacity style={styles.secondaryButton}>
+                <Text style={styles.secondaryButtonText}>Sign In</Text>
+              </TouchableOpacity>
+            </View>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Explore Now</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+            {/* Navigation Prompt */}
+            <Text style={styles.promptText}>
+              Continue as a guest
+            </Text>
+          </View>
+        </ImageBackground>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -63,30 +77,51 @@ const styles = StyleSheet.create({
   logo: {
     width: 120,
     height: 120,
+    resizeMode: "contain",
     marginBottom: 20,
   },
   textLarge: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#ffffff",
+    color: "#000",
     textAlign: "center",
     marginBottom: 10,
   },
   textSmall: {
     fontSize: 14,
-    color: "#ffffff",
+    color: "#000",
     textAlign: "center",
   },
-  button: {
+  buttonGroup: {
     marginTop: 30,
-    backgroundColor: "#000000",
+    width: "100%",
+    alignItems: "center",
+  },
+  primaryButton: {
+    backgroundColor: "#000",
     paddingVertical: 12,
-    paddingHorizontal: 30,
+    paddingHorizontal: 40,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  primaryButtonText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+  secondaryButton: {
+    borderWidth: 1,
+    borderColor: "#000",
+    paddingVertical: 12,
+    paddingHorizontal: 40,
     borderRadius: 8,
   },
-  buttonText: {
-    color: "#ffffff",
+  secondaryButtonText: {
+    color: "#000",
     fontSize: 16,
-    fontWeight: "600",
+  },
+  promptText: {
+    marginTop: 20,
+    fontSize: 14,
+    color: "#000",
   },
 });
